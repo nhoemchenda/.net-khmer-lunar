@@ -1,11 +1,11 @@
 # .net-khmer-lunar
-.NET Project convert date to string of khmer lunar date
+**.NET Project convert date to string of khmer lunar date**
 
 This repository consists of two project:
  + KhmerLunar: the testing application.
  + KhmerLunarLib: the core library for converting from date to string of khmer lunar
  
-The points to be noted
+**The points to be noted:**
  + Method: getKhmerLunarCode() will produce result like 02K15S or 01R07
       - 02 (First) , 01 (Second) stand for month where the list of khmer month string is produced by getHashMonth
       - K (First) , R (Second) stand for កើត (Kert) and រោច (Rouch)
