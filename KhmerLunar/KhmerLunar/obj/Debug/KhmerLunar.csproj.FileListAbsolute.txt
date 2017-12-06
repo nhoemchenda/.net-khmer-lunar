@@ -1,0 +1,10 @@
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.csprojResolveAssemblyReference.cache
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.Form1.resources
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.Properties.Resources.resources
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.csproj.GenerateResource.Cache
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\bin\Debug\KhmerLunar.exe
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\bin\Debug\KhmerLunar.pdb
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\bin\Debug\KhmerLunarLib.dll
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\bin\Debug\KhmerLunarLib.pdb
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.exe
+E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunar\obj\Debug\KhmerLunar.pdb
