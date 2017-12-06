@@ -91,12 +91,12 @@ namespace KhmerLunarLib
             {
                 str = "D";
             }
-            Console.WriteLine(BEYear.ToString() + "\t" + BEYear.ToString() + "\t" + aharkun.ToString() + "\t" + avoman.ToString() + "\t" + bodithey.ToString() + "\t" + str + "\t");
+            //Console.WriteLine(BEYear.ToString() + "\t" + BEYear.ToString() + "\t" + aharkun.ToString() + "\t" + avoman.ToString() + "\t" + bodithey.ToString() + "\t" + str + "\t");
             return str;
         }
-        public static string getKhmerLunarString(DateTime srcDate)
+
+        public static Hashtable getHashMonth()
         {
-            string str = "";
             Hashtable hsMonth = new Hashtable();
             hsMonth.Add("01", "មិគសិរ");
             hsMonth.Add("02", "បុស្ស");
@@ -111,7 +111,38 @@ namespace KhmerLunarLib
             hsMonth.Add("11", "ស្រាពណ៌");
             hsMonth.Add("12", "ភទ្របទ");
             hsMonth.Add("13", "អស្សុជ");
-            hsMonth.Add("14", "កក្ដឹក");
+            hsMonth.Add("14", "កក្ដិក");
+
+            return hsMonth;
+        }
+        public static string getKhmerLunarString(DateTime srcDate)
+        {
+            Hashtable hsMonth = getHashMonth();
+            string enText = getKhmerLunarCode(srcDate);            
+            string khText = "";
+            string month = enText.Substring(0, 2);
+            string kr = enText.Substring(2, 1);
+            string d = enText.Substring(3, 2);
+            string s = "";
+            if (enText.Length == 6)
+            {
+                s = enText.Substring(5, 1);
+            }
+
+            if (s == "S")
+            {
+                s = "សីល";
+            }
+            month = hsMonth[month].ToString();
+            kr = kr.Replace("K", "កើត").Replace("R", "រោច");
+            int dt = int.Parse(d);
+            d = dt.ToString().Replace("0", "០").Replace("1", "១").Replace("2", "២").Replace("3", "៣").Replace("4", "៤").Replace("5", "៥").Replace("6", "៦").Replace("7", "៧").Replace("8", "៨").Replace("9", "៩");
+            khText = d + kr + " " + month;
+            return khText;
+        }
+
+        public static string getKhmerLunarCode(DateTime srcDate)
+        {
             Hashtable hsDay = new Hashtable();
             hsDay.Add(1, "01K01");
             hsDay.Add(2, "01K02");
@@ -569,29 +600,13 @@ namespace KhmerLunarLib
                 }
             }
 
-
-
-            string enText = hsDay[cNum].ToString();
-            string khText = "";
-            string month = enText.Substring(0, 2);
-            string kr = enText.Substring(2, 1);
-            string d = enText.Substring(3, 2);
-            string s = "";
-            if (enText.Length == 6)
+            string result = hsDay[cNum].ToString();
+            if(result == "07R14" && getCalendarLeap(srcDate.Year + 544) != "D")
             {
-                s = enText.Substring(5, 1);
+                result = result + "S";
             }
+            return result;
 
-            if (s == "S")
-            {
-                s = "សីល";
-            }
-            month = hsMonth[month].ToString();
-            kr = kr.Replace("K", "កើត").Replace("R", "រោច");
-            int dt = int.Parse(d);
-            d = dt.ToString().Replace("0", "០").Replace("1", "១").Replace("2", "២").Replace("3", "៣").Replace("4", "៤").Replace("5", "៥").Replace("6", "៦").Replace("7", "៧").Replace("8", "៨").Replace("9", "៩");
-            khText = d + kr + " " + month;
-            return khText;
         }
     }
 }
