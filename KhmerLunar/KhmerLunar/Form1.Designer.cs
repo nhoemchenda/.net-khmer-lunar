@@ -65,10 +65,12 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("Khmer OS Battambang", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(295, 9);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 37);
+            this.textBox2.Size = new System.Drawing.Size(240, 37);
             this.textBox2.TabIndex = 3;
             // 
             // Form1

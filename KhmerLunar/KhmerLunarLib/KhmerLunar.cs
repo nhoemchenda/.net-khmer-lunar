@@ -95,6 +95,24 @@ namespace KhmerLunarLib
             return str;
         }
 
+        public static Hashtable getHashAnimalYear()
+        {
+            Hashtable hsYear = new Hashtable();
+            hsYear.Add("01", "ជូត");
+            hsYear.Add("02", "ឆ្លូវ");
+            hsYear.Add("03", "ខាល");
+            hsYear.Add("04", "ថោះ");
+            hsYear.Add("05", "រោង");
+            hsYear.Add("06", "ម្សាញ់");
+            hsYear.Add("07", "មមី");
+            hsYear.Add("08", "មមែ");
+            hsYear.Add("09", "វក");
+            hsYear.Add("10", "រកា");
+            hsYear.Add("11", "ច");
+            hsYear.Add("12", "កុរ");
+            return hsYear;
+        }
+
         public static Hashtable getHashMonth()
         {
             Hashtable hsMonth = new Hashtable();
@@ -115,14 +133,37 @@ namespace KhmerLunarLib
 
             return hsMonth;
         }
+
+        public static Hashtable getHashSak()
+        {
+            Hashtable hsSak = new Hashtable();
+            hsSak.Add("01", "ឯក​ស័ក");
+            hsSak.Add("02", "ទោ​ស័ក");
+            hsSak.Add("03", "ត្រី​ស័ក");
+            hsSak.Add("04", "ចត្វា​ស័ក");
+            hsSak.Add("05", "បញ្ច​ស័ក");
+            hsSak.Add("06", "ឆ​ស័ក");
+            hsSak.Add("07", "សប្ត​ស័ក");
+            hsSak.Add("08", "អដ្ឋ​ស័ក");
+            hsSak.Add("09", "នព្វ​ស័ក");
+            hsSak.Add("10", "សំរឹទ្ធិ​ស័ក");
+
+
+            return hsSak;
+        }
         public static string getKhmerLunarString(DateTime srcDate)
         {
             Hashtable hsMonth = getHashMonth();
+            Hashtable hsAnimalYear = getHashAnimalYear();
+            Hashtable hsSak = getHashSak();
             string enText = getKhmerLunarCode(srcDate);            
             string khText = "";
-            string month = enText.Substring(0, 2);
-            string kr = enText.Substring(2, 1);
-            string d = enText.Substring(3, 2);
+            string sak = enText.Substring(0, 2);
+            string animalYear = enText.Substring(2, 2);
+            string year = enText.Substring(4, 4);
+            string month = enText.Substring(8, 2);
+            string kr = enText.Substring(10, 1);
+            string d = enText.Substring(11, 2);
             string s = "";
             if (enText.Length == 6)
             {
@@ -133,12 +174,20 @@ namespace KhmerLunarLib
             {
                 s = "សីល";
             }
+            sak = hsSak[sak].ToString();
+            year = convertToKhmerNum(year);
             month = hsMonth[month].ToString();
+            animalYear = hsAnimalYear[animalYear].ToString();
             kr = kr.Replace("K", "កើត").Replace("R", "រោច");
             int dt = int.Parse(d);
-            d = dt.ToString().Replace("0", "០").Replace("1", "១").Replace("2", "២").Replace("3", "៣").Replace("4", "៤").Replace("5", "៥").Replace("6", "៦").Replace("7", "៧").Replace("8", "៨").Replace("9", "៩");
-            khText = d + kr + " " + month;
+            d = convertToKhmerNum(dt.ToString());
+            khText = "ថ្ងៃ "+d + kr + " ខែ" + month +" ព.ស "+year +" ឆ្នាំ "+animalYear+" "+sak;
             return khText;
+        }
+
+        public static string convertToKhmerNum(string src)
+        {
+            return src.ToString().Replace("0", "០").Replace("1", "១").Replace("2", "២").Replace("3", "៣").Replace("4", "៤").Replace("5", "៥").Replace("6", "៦").Replace("7", "៧").Replace("8", "៨").Replace("9", "៩");
         }
 
         public static string getKhmerLunarCode(DateTime srcDate)
@@ -787,6 +836,8 @@ namespace KhmerLunarLib
                 correspondNum = (int)hsYear[srcDate.Year];
             }
 
+            int yearPath = beginDate.Year+543;
+           
             DateTime tmpDate = beginDate;
             int diffDate = srcDate.Subtract(beginDate).Days;
             int cNum = correspondNum;
@@ -824,6 +875,11 @@ namespace KhmerLunarLib
                 {
                     cNum = 1;
                 }
+
+                if (cNum == 119)
+                {
+                    yearPath = yearPath + 1;
+                }
             }
 
             //return cNum.ToString();
@@ -833,6 +889,12 @@ namespace KhmerLunarLib
             {
                 result = result + "S";
             }
+
+            //year path
+            
+            int animalYear = (yearPath + 4) % 12 + 1;
+            int sak = (yearPath + 7) % 10 + 1;
+            result = sak.ToString("00")+ animalYear.ToString("00") + yearPath.ToString("0000") + result;
             return result;
 
         }
