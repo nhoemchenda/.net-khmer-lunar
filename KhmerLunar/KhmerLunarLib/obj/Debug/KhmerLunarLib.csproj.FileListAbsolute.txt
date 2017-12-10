@@ -3,3 +3,8 @@ E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunarLib\bin\Debug\Khmer
 E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.csprojResolveAssemblyReference.cache
 E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.dll
 E:\Chenda\34.github\dot-net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.pdb
+E:\Projects\dotnet-khmer-lunar\.net-khmer-lunar\KhmerLunar\KhmerLunarLib\bin\Debug\KhmerLunarLib.dll
+E:\Projects\dotnet-khmer-lunar\.net-khmer-lunar\KhmerLunar\KhmerLunarLib\bin\Debug\KhmerLunarLib.pdb
+E:\Projects\dotnet-khmer-lunar\.net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.csprojResolveAssemblyReference.cache
+E:\Projects\dotnet-khmer-lunar\.net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.dll
+E:\Projects\dotnet-khmer-lunar\.net-khmer-lunar\KhmerLunar\KhmerLunarLib\obj\Debug\KhmerLunarLib.pdb

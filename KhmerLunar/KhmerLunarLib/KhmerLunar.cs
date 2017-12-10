@@ -559,9 +559,235 @@ namespace KhmerLunarLib
             hsDay.Add(413, "14R13");
             hsDay.Add(414, "14R14");
             hsDay.Add(415, "14R15S");
-            DateTime beginDate = DateTime.Parse("2012-01-01");
+
+
+            //predfine by year hash on date 01 Jan
+            int minDefineYear = 1900;
+            int maxDefineYear = 2100;
+
+            Hashtable hsYear = new Hashtable();
+            hsYear.Add(1900, 30);
+            hsYear.Add(1901, 41);
+            hsYear.Add(1902, 22);
+            hsYear.Add(1903, 32);
+            hsYear.Add(1904, 43);
+            hsYear.Add(1905, 25);
+            hsYear.Add(1906, 36);
+            hsYear.Add(1907, 46);
+            hsYear.Add(1908, 27);
+            hsYear.Add(1909, 39);
+            hsYear.Add(1910, 20);
+            hsYear.Add(1911, 31);
+            hsYear.Add(1912, 41);
+            hsYear.Add(1913, 23);
+            hsYear.Add(1914, 34);
+            hsYear.Add(1915, 45);
+            hsYear.Add(1916, 26);
+            hsYear.Add(1917, 38);
+            hsYear.Add(1918, 48);
+            hsYear.Add(1919, 29);
+            hsYear.Add(1920, 40);
+            hsYear.Add(1921, 22);
+            hsYear.Add(1922, 33);
+            hsYear.Add(1923, 43);
+            hsYear.Add(1924, 24);
+            hsYear.Add(1925, 36);
+            hsYear.Add(1926, 47);
+            hsYear.Add(1927, 28);
+            hsYear.Add(1928, 38);
+            hsYear.Add(1929, 20);
+            hsYear.Add(1930, 31);
+            hsYear.Add(1931, 42);
+            hsYear.Add(1932, 23);
+            hsYear.Add(1933, 34);
+            hsYear.Add(1934, 45);
+            hsYear.Add(1935, 26);
+            hsYear.Add(1936, 37);
+            hsYear.Add(1937, 49);
+            hsYear.Add(1938, 30);
+            hsYear.Add(1939, 40);
+            hsYear.Add(1940, 21);
+            hsYear.Add(1941, 33);
+            hsYear.Add(1942, 44);
+            hsYear.Add(1943, 25);
+            hsYear.Add(1944, 35);
+            hsYear.Add(1945, 47);
+            hsYear.Add(1946, 28);
+            hsYear.Add(1947, 39);
+            hsYear.Add(1948, 20);
+            hsYear.Add(1949, 31);
+            hsYear.Add(1950, 42);
+            hsYear.Add(1951, 23);
+            hsYear.Add(1952, 34);
+            hsYear.Add(1953, 46);
+            hsYear.Add(1954, 27);
+            hsYear.Add(1955, 37);
+            hsYear.Add(1956, 48);
+            hsYear.Add(1957, 30);
+            hsYear.Add(1958, 41);
+            hsYear.Add(1959, 22);
+            hsYear.Add(1960, 32);
+            hsYear.Add(1961, 44);
+            hsYear.Add(1962, 25);
+            hsYear.Add(1963, 36);
+            hsYear.Add(1964, 46);
+            hsYear.Add(1965, 28);
+            hsYear.Add(1966, 39);
+            hsYear.Add(1967, 20);
+            hsYear.Add(1968, 31);
+            hsYear.Add(1969, 42);
+            hsYear.Add(1970, 23);
+            hsYear.Add(1971, 34);
+            hsYear.Add(1972, 45);
+            hsYear.Add(1973, 27);
+            hsYear.Add(1974, 37);
+            hsYear.Add(1975, 48);
+            hsYear.Add(1976, 29);
+            hsYear.Add(1977, 41);
+            hsYear.Add(1978, 22);
+            hsYear.Add(1979, 32);
+            hsYear.Add(1980, 43);
+            hsYear.Add(1981, 25);
+            hsYear.Add(1982, 36);
+            hsYear.Add(1983, 47);
+            hsYear.Add(1984, 28);
+            hsYear.Add(1985, 39);
+            hsYear.Add(1986, 20);
+            hsYear.Add(1987, 31);
+            hsYear.Add(1988, 42);
+            hsYear.Add(1989, 24);
+            hsYear.Add(1990, 34);
+            hsYear.Add(1991, 45);
+            hsYear.Add(1992, 26);
+            hsYear.Add(1993, 38);
+            hsYear.Add(1994, 19);
+            hsYear.Add(1995, 29);
+            hsYear.Add(1996, 40);
+            hsYear.Add(1997, 22);
+            hsYear.Add(1998, 33);
+            hsYear.Add(1999, 44);
+            hsYear.Add(2000, 25);
+            hsYear.Add(2001, 36);
+            hsYear.Add(2002, 47);
+            hsYear.Add(2003, 28);
+            hsYear.Add(2004, 39);
+            hsYear.Add(2005, 21);
+            hsYear.Add(2006, 31);
+            hsYear.Add(2007, 42);
+            hsYear.Add(2008, 23);
+            hsYear.Add(2009, 35);
+            hsYear.Add(2010, 45);
+            hsYear.Add(2011, 26);
+            hsYear.Add(2012, 37);
+            hsYear.Add(2013, 19);
+            hsYear.Add(2014, 30);
+            hsYear.Add(2015, 41);
+            hsYear.Add(2016, 22);
+            hsYear.Add(2017, 33);
+            hsYear.Add(2018, 44);
+            hsYear.Add(2019, 25);
+            hsYear.Add(2020, 36);
+            hsYear.Add(2021, 47);
+            hsYear.Add(2022, 28);
+            hsYear.Add(2023, 39);
+            hsYear.Add(2024, 20);
+            hsYear.Add(2025, 32);
+            hsYear.Add(2026, 42);
+            hsYear.Add(2027, 23);
+            hsYear.Add(2028, 34);
+            hsYear.Add(2029, 46);
+            hsYear.Add(2030, 27);
+            hsYear.Add(2031, 37);
+            hsYear.Add(2032, 18);
+            hsYear.Add(2033, 30);
+            hsYear.Add(2034, 41);
+            hsYear.Add(2035, 22);
+            hsYear.Add(2036, 32);
+            hsYear.Add(2037, 44);
+            hsYear.Add(2038, 25);
+            hsYear.Add(2039, 36);
+            hsYear.Add(2040, 47);
+            hsYear.Add(2041, 29);
+            hsYear.Add(2042, 39);
+            hsYear.Add(2043, 20);
+            hsYear.Add(2044, 31);
+            hsYear.Add(2045, 43);
+            hsYear.Add(2046, 24);
+            hsYear.Add(2047, 34);
+            hsYear.Add(2048, 45);
+            hsYear.Add(2049, 27);
+            hsYear.Add(2050, 38);
+            hsYear.Add(2051, 19);
+            hsYear.Add(2052, 29);
+            hsYear.Add(2053, 41);
+            hsYear.Add(2054, 22);
+            hsYear.Add(2055, 33);
+            hsYear.Add(2056, 44);
+            hsYear.Add(2057, 26);
+            hsYear.Add(2058, 36);
+            hsYear.Add(2059, 47);
+            hsYear.Add(2060, 28);
+            hsYear.Add(2061, 40);
+            hsYear.Add(2062, 21);
+            hsYear.Add(2063, 31);
+            hsYear.Add(2064, 42);
+            hsYear.Add(2065, 24);
+            hsYear.Add(2066, 35);
+            hsYear.Add(2067, 45);
+            hsYear.Add(2068, 26);
+            hsYear.Add(2069, 38);
+            hsYear.Add(2070, 19);
+            hsYear.Add(2071, 30);
+            hsYear.Add(2072, 40);
+            hsYear.Add(2073, 22);
+            hsYear.Add(2074, 33);
+            hsYear.Add(2075, 44);
+            hsYear.Add(2076, 25);
+            hsYear.Add(2077, 36);
+            hsYear.Add(2078, 47);
+            hsYear.Add(2079, 28);
+            hsYear.Add(2080, 39);
+            hsYear.Add(2081, 21);
+            hsYear.Add(2082, 32);
+            hsYear.Add(2083, 42);
+            hsYear.Add(2084, 23);
+            hsYear.Add(2085, 35);
+            hsYear.Add(2086, 46);
+            hsYear.Add(2087, 27);
+            hsYear.Add(2088, 37);
+            hsYear.Add(2089, 19);
+            hsYear.Add(2090, 30);
+            hsYear.Add(2091, 41);
+            hsYear.Add(2092, 22);
+            hsYear.Add(2093, 33);
+            hsYear.Add(2094, 44);
+            hsYear.Add(2095, 25);
+            hsYear.Add(2096, 36);
+            hsYear.Add(2097, 48);
+            hsYear.Add(2098, 29);
+            hsYear.Add(2099, 39);
+            hsYear.Add(2100, 20);
+
+            DateTime beginDate = DateTime.Parse("1900-01-01");
+            
+            int correspondNum = 30;
+
+            if (srcDate.Year > maxDefineYear)
+            {
+                beginDate = DateTime.Parse(maxDefineYear.ToString() + "-01-01");
+                correspondNum = (int)hsYear[maxDefineYear];
+            }
+            else if (srcDate.Year < minDefineYear)
+            {
+                throw new Exception("Uncalculatable");
+            }
+            else
+            {
+                beginDate = DateTime.Parse(srcDate.Year.ToString() + "-01-01");
+                correspondNum = (int)hsYear[srcDate.Year];
+            }
+
             DateTime tmpDate = beginDate;
-            int correspondNum = 37;
             int diffDate = srcDate.Subtract(beginDate).Days;
             int cNum = correspondNum;
 
@@ -599,6 +825,8 @@ namespace KhmerLunarLib
                     cNum = 1;
                 }
             }
+
+            //return cNum.ToString();
 
             string result = hsDay[cNum].ToString();
             if(result == "07R14" && getCalendarLeap(srcDate.Year + 544) != "D")
