@@ -16,14 +16,14 @@ This repository consists of two project:
  + Method **getKhmerLunarString** will produce full description in khmer.
  
  **Example1:** 
- -Date: 2017-12-10 
- -Code: 0910256101R07 (09 10 2561 01 R 07)
- -Full Description: ថ្ងៃ ៧រោច ខែមិគសិរ ព.ស ២៥៦១ ឆ្នាំ រកា នព្វ​ស័ក
+  - Date: 2017-12-10 
+  - Code: 0910256101R07 (09 10 2561 01 R 07)
+  - Full Description: ថ្ងៃ ៧រោច ខែមិគសិរ ព.ស ២៥៦១ ឆ្នាំ រកា នព្វ​ស័ក
  
  **Example2:** 
- -Date: 2018-01-01 
- -Code: 0910256102K15S (09 10 2561 02 K 15 S)
- -Full Description: ថ្ងៃ ១៥កើត ខែបុស្ស ព.ស ២៥៦១ ឆ្នាំ រកា នព្វ​ស័ក
+  - Date: 2018-01-01 
+  - Code: 0910256102K15S (09 10 2561 02 K 15 S)
+  - Full Description: ថ្ងៃ ១៥កើត ខែបុស្ស ព.ស ២៥៦១ ឆ្នាំ រកា នព្វ​ស័ក
 **Note:**
 **It is privately for this project to increase Budha era on first month of Chet month (១កើត ខែចេត្រ) .**
 **So from that day the library will mark as new era.**
