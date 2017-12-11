@@ -876,14 +876,39 @@ namespace KhmerLunarLib
                     cNum = 1;
                 }
 
-                if (cNum == 119)
+                if (cNum == 163)
                 {
                     yearPath = yearPath + 1;
                 }
             }
 
-            //return cNum.ToString();
+            //check if animal year/sak increase
+            int tmpNewYearDay = 11;
+            int dayOfNewYear = (srcDate.Year + 4) % 7;
+            while (tmpNewYearDay <= 17)
+            {
+                DateTime tmp = new DateTime(srcDate.Year,4,tmpNewYearDay);
+                if ((int)tmp.DayOfWeek == dayOfNewYear)
+                {
+                    break;
+                }
+                tmpNewYearDay++;
+            }
+            DateTime newYearDay = new DateTime(srcDate.Year, 4, tmpNewYearDay);
 
+            int animalYear;
+            int sak;
+            if (srcDate >= newYearDay)
+            {
+                animalYear = (srcDate.Year + 8) % 12 + 1;
+                sak = (srcDate.Year + 1) % 10 + 1;
+            }
+            else
+            {
+                animalYear = (srcDate.Year + 7) % 12 + 1;
+                sak = (srcDate.Year + 0) % 10 + 1;
+            }
+            
             string result = hsDay[cNum].ToString();
             if(result == "07R14" && getCalendarLeap(srcDate.Year + 544) != "D")
             {
@@ -891,9 +916,8 @@ namespace KhmerLunarLib
             }
 
             //year path
+           
             
-            int animalYear = (yearPath + 4) % 12 + 1;
-            int sak = (yearPath + 7) % 10 + 1;
             result = sak.ToString("00")+ animalYear.ToString("00") + yearPath.ToString("0000") + result;
             return result;
 
