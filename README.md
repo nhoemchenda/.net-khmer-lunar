@@ -1,4 +1,4 @@
-# .net-khmer-lunar (In Development)
+# .net-khmer-lunar 
 **.NET Project convert date to string of khmer lunar date**
 
 This repository consists of two project:
